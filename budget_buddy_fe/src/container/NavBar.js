@@ -6,7 +6,8 @@ class NavBar extends Component {
     return(
       <Link to= "/">
       <h1>this is a NavBar</h1>
-      </Link>
+      </Link>,
+      <h3>hello</h3>
     )
   }
 };

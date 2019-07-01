@@ -44,8 +44,8 @@ handleSubmit = event => {
 
          <input type='submit'/>
 
-
         </form>
+        <h6>Not a member yet? Link </h6>
       </div>
     )
   }

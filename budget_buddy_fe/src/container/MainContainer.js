@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import  SignIn from '../components/SignIn';
+
 class MainContainer extends Component {
   render() {
     return (
-      <SignIn/>
+      <div>
+      <h1>h1 mainContainer</h1>
+      </div>
     )
 
   }

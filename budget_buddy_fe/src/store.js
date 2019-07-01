@@ -6,12 +6,23 @@ import rootReducer from './reducers';
 
 const initialState = {
   user: {
+    firstName: "",
+    lastName: "",
     username: "",
     password: "",
+    email: "",
     bio: "",
-    avatar: "",
-    token: ""
-  }
+    amount: 0,
+    avatar:"",
+    token:""
+  },
+  budget: {
+    item: "",
+    amount: 0,
+    description: "",
+    catagory:""
+  },
+  expenses: []
 }
 
 const middleware = [thunk]
