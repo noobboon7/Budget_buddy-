@@ -14,7 +14,7 @@ function register(user) {
 }
 function login(user) {
   return{
-    type: "SET_USER_TO_STATE",
+    type: "LOGIN_USER",
     payload: user
   }
 }

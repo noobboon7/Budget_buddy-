@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import {  } from '';
+import {NavLink, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class SignIn extends Component {
@@ -16,14 +17,15 @@ class SignIn extends Component {
 
 handleSubmit = event => {
   event.preventDefault()
-  this.props.userPostFetch(this.state)
+  let {dispatch} = this.props
+  dispatch({type: "LOGIN_USER", payload:this.state})
 }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return(
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
         <h2>Sign In</h2>
         <label>Username</label>
         <input
@@ -45,15 +47,15 @@ handleSubmit = event => {
          <input type='submit'/>
 
         </form>
-        <h6>Not a member yet? Link </h6>
+        <h6>Not a member yet? <NavLink to="/Register"> Register </NavLink></h6>
       </div>
     )
   }
 }
 
+//
+// function mapDispatchToProps(state) {a
+//     return {username: state.username}
+// }
 
-function mapDispatchToProps(state) {
-    return {username: state.username}
-}
-
-export default connect(null, mapDispatchToProps)(SignIn);
+export default withRouter(connect(null)(SignIn))

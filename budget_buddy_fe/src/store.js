@@ -14,6 +14,7 @@ const initialState = {
     bio: "",
     amount: 0,
     avatar:"",
+    loggedIn: true,
     token:""
   },
   budget: {
@@ -35,5 +36,6 @@ const store = createStore(
   )
 )
 
+console.log(store.getState(), "THIS IS STATE")
 
 export default store;
