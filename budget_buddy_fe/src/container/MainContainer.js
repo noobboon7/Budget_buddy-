@@ -5,7 +5,7 @@ class MainContainer extends Component {
   render() {
     return (
       <div>
-      <h1> user:{this.props.user.password} </h1>
+      <h1> user:{this.props.user.firstName} </h1>
       </div>
     )
 

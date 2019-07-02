@@ -17,11 +17,11 @@ const userReducer = (state = initialState, action) => {
   switch (action.type) {
 
     case "SAVE_USER_TO_STATE":
-    let userObj = action.payload
+    let userObj = action.payload.user
       return {
         ...state,
-        firstName: userObj.firstName,
-        lastName: userObj.lastName,
+        firstName: userObj.first_name,
+        lastName: userObj.last_name,
         username: userObj.username,
         password: userObj.password,
         email: userObj.email,

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 class NavBar extends Component {
   render() {
     return(
+      <>
       <Link to= "/">
         <h2>Home</h2>
       </Link>,
@@ -12,6 +13,7 @@ class NavBar extends Component {
       <img className="ui avatar image" src={this.props.user.avatar} alt={this.props.user.username}/>
       <span>{this.props.user.username}</span>
       </Link>
+      </>
     )
   }
 };

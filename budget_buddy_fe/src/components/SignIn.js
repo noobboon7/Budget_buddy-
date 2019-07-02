@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import {  } from '';
 import {NavLink, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -47,7 +46,7 @@ handleSubmit = event => {
          <input type='submit'/>
 
         </form>
-        <h6>Not a member yet? <NavLink to="/Register"> Register </NavLink></h6>
+        <h5>Not a member yet? <NavLink to="/Register"> Register </NavLink></h5>
       </div>
     )
   }
