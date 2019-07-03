@@ -13,10 +13,12 @@ let initialState = {
 }
 
 const userReducer = (state = initialState, action) => {
+  // debugger
   // console.log(state)
   switch (action.type) {
 
     case "SAVE_USER_TO_STATE":
+    debugger
     let userObj = action.payload.user
       return {
         ...state,
@@ -32,6 +34,7 @@ const userReducer = (state = initialState, action) => {
       }
 
       case "LOGIN_USER":
+      debugger
       return{
         ...state,
         username: action.payload.username,

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { persistUserToBackend } from '../actions/userActions';
-
+import { addUserToBackend } from '../actions/userActions';
 
 class Register extends Component {
 
@@ -25,53 +24,63 @@ class Register extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const newUser = this.state
-    // const { dispatch } = this.props
-    this.props.persistUserToBackend(newUser)
+    this.props.addUserToBackend(newUser)
     // dispatch({type: "SAVE_USER_TO_STATE", payload:newUser})
   }
 
   render() {
     const {username, password, email, first_name, last_name,bio} = this.state
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-        <div className="ui large icon input">
-          <label>
-            First Name:
-            <input type="text" name="first_name" value={first_name} onChange={this.handleChange}/>
-          </label>
+      <div className = "ui container ">
+        <form className="ui form" onSubmit={this.handleSubmit}>
+        <br/>
+        <h4 className="ui dividing header">Register</h4>
+
+        <div className=" two fields">
+          <div className="field">
+            <label>First Name:</label>
+            <div className="ui left icon input">
+              <input type="text" name="first_name" value={first_name} onChange={this.handleChange}/>
+              <i className="keyboard outline icon"></i>
+            </div>
           </div>
-          <div className="ui large icon input">
-          <label>
-            Last Name:
-            <input type="text" name="last_name" value={last_name} onChange={this.handleChange}/>
-          </label>
+          <div className="field">
+            <label>Last Name:</label>
+            <div className="ui left icon input">
+              <input type="text" name="last_name" value={last_name} onChange={this.handleChange}/>
+              <i className="keyboard outline icon"></i>
+            </div>
           </div>
-          <div className="ui large icon input">
-          <label>
-          Email:
-          <input type="text" name="email" value={email} onChange={this.handleChange}/>
-          </label>
+        </div>
+          <div className="field">
+            <label>Email:</label>
+            <div className="ui left icon input">
+            <input type="email" name="email" value={email} onChange={this.handleChange}/>
+            <i className="envelope icon"></i>
+            </div>
           </div>
-          <div className="ui large icon input">
-          <label>
-            Username:
-            <input type="text" name="username" value={username} onChange={this.handleChange}/>
-          </label>
+          <div className="field">
+            <label>Username:</label>
+            <div className="ui left icon input">
+              <input type="text" name="username" value={username} onChange={this.handleChange}/>
+              <i className="user icon"></i>
+            </div>
           </div>
-          <div className="ui large icon input">
-          <label>
-            Password:
-            <input type="password" name="password" value={password} onChange={this.handleChange}/>
-          </label>
+          <div className="field">
+            <label>Password:</label>
+            <div className="ui left icon input">
+              <input type="password" name="password" value={password} onChange={this.handleChange}/>
+              <i className="lock icon"></i>
+            </div>
           </div>
-          <div className="ui large icon input">
-          <label>
-            Bio:
-            <input type="text" name="bio" value={bio} onChange={this.handleChange}/>
-          </label>
+          <div className="field">
+            <label>Bio:</label>
+            <div className="ui left icon input">
+              <input type="text" name="bio" value={bio} onChange={this.handleChange}/>
+              <i className="keyboard outline icon"></i>
+            </div>
           </div>
-          <button className="ui button" type="submit">submit</button>
+          <button className="ui blue submit button" type="submit">submit</button>
 
         </form>
       </div>
@@ -82,7 +91,7 @@ class Register extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    persistUserToBackend: (userObj) => dispatch(persistUserToBackend(userObj)),
+    addUserToBackend: (userObj) => dispatch(addUserToBackend(userObj)),
     // register: (newUser) => dispatch({type: "SAVE_USER_TO_STATE", payload:newUser})
   }
 }
