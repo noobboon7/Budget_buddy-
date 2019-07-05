@@ -1,14 +1,19 @@
 import React, {Component} from 'react';
+import itemForm from '../components/itemForm';
 
 class SideMenu extends Component {
   state = {
     itemList: []
   }
   handleClick = (e) => {
-    // console.log("clicked add button");
-    this.setState({
-      itemList: [...this.state.itemList, <div>item</div>]
-    })
+    console.log("clicked add button");
+    return(
+      <itemForm/>
+    )
+    // this.setState({
+    //
+    //   itemList: [...this.state.itemList, <div>item</div>]
+    // })
   }
 
   itemButton = (evt) => {
