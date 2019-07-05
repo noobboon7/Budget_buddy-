@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import itemForm from '../components/itemForm';
+import ItemForm from '../components/itemForm';
+import Popup from "reactjs-popup";
+
 
 class SideMenu extends Component {
   state = {
@@ -7,8 +9,12 @@ class SideMenu extends Component {
   }
   handleClick = (e) => {
     console.log("clicked add button");
+
     return(
-      <itemForm/>
+      <Popup trigger={<button> Trigger</button>} position="right center">
+        <ItemForm/>
+      </Popup>
+
     )
     // this.setState({
     //
@@ -26,10 +32,11 @@ class SideMenu extends Component {
 
       <div className="ui vertical menu ">
         <div>
-          <button onClick={this.handleClick} className=" green circular ui icon button">
-            <i className="plus icon"></i>
-            Add Item
-          </button>
+        <Popup trigger={<button onClick={this.handleClick} className=" green circular ui icon button"> <i className="plus icon"></i>
+        Add Item</button>} position="right center">
+          <ItemForm/>
+        </Popup>
+
         </div>
         <ul>
         {this.state.itemList.map(item => {

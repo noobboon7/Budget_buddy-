@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import NavBar from './NavBar';
 import SideMenu from './SideMenu';
-import ItemForm from '../components/itemForm';
 
 
 class MainContainer extends Component {
@@ -12,8 +11,6 @@ class MainContainer extends Component {
       <div className="ui fluid container">
         <NavBar/>
         <SideMenu/>
-        <ItemForm/>
-
       </div>
       </>
     )
