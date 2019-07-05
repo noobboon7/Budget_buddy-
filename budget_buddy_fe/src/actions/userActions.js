@@ -1,5 +1,5 @@
 export const userLoginFetch = user => {
-  // debugger
+  debugger
   return dispatch => {
     return fetch("http://localhost:3000/login", {
       method: "POST",
@@ -11,9 +11,9 @@ export const userLoginFetch = user => {
     })
       .then(resp => resp.json())
       .then(data => {
-        debugger
+        // debugger
         if (data.error) {
-          alert(data.error)
+          alert(data.error && data.message)
         } else {
           localStorage.setItem("token", data.jwt)
           dispatch(loginUser(data.user))
