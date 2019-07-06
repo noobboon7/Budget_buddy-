@@ -20,8 +20,8 @@ class NavBar extends Component {
       <h2>Budget</h2>
       </Link>
       <div className="right menu">
-      <Link to= "/SignIn" className="item">
-        <button onClick= {this.signOut}className="">Log Out</button>
+      <Link onClick= {this.signOut} to= "/SignIn" className="item">
+        <h2>Log Out</h2>
       </Link>
       <Link to="/Profile" className="item">
       <img className="ui avatar image" src={avatar} alt={username}/>

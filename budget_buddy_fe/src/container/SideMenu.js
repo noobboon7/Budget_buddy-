@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ItemForm from '../components/itemForm';
+import ItemForm from '../components/ItemForm';
 import Popup from "reactjs-popup";
 
 
@@ -9,13 +9,6 @@ class SideMenu extends Component {
   }
   handleClick = (e) => {
     console.log("clicked add button");
-
-    return(
-      <Popup trigger={<button> Trigger</button>} position="right center">
-        <ItemForm/>
-      </Popup>
-
-    )
     // this.setState({
     //
     //   itemList: [...this.state.itemList, <div>item</div>]
