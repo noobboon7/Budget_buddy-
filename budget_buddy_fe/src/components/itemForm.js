@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { addItem } from '../actions/ItemAction';
 
 
-
-
 class ItemForm extends React.Component {
   state={
     itemName: "",
@@ -20,7 +18,6 @@ class ItemForm extends React.Component {
   }
   handleSubmit = (evt) => {
     evt.preventDefault()
-    // let dreamItem = this.state
     // console.log(addItem);
     this.props.addItem(this.state)
   }

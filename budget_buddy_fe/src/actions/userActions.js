@@ -11,7 +11,7 @@ export const userLoginFetch = user => {
     })
       .then(resp => resp.json())
       .then(data => {
-        // debugger
+        debugger
         if (data.error) {
           alert(data.error && data.message)
         } else {

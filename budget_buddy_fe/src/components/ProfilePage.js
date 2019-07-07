@@ -15,7 +15,7 @@ class Profile extends Component {
       </Link>
       <div>
       <img className="ui small circular image" src={avatar} alt={username} />
-      <h1>o{username}</h1>
+      <h1>UserName: {username}</h1>
       <h3>Bio: {bio}</h3>
       </div>
       <hr/>

@@ -11,7 +11,7 @@ class Register extends Component {
     password: "",
     email: "",
     bio: "",
-    amount: 5,
+    amount: 5, 
     avatar:"../avatar.png"
   };
 

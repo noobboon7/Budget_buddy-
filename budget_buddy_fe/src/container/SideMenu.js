@@ -23,7 +23,7 @@ class SideMenu extends Component {
         </div>
         <ul>
         {this.props.items.map(item => {
-          console.log(item);
+          // console.log(item);
           return(
             <li>
               <img src={item.imgURL} alt={item.itemName} />

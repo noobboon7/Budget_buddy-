@@ -22,9 +22,9 @@ class App extends Component {
       <>
       {
         loggedIn?
-        <Redirect to="/SignIn"/>
-        :
         <Redirect to="/"/>
+        :
+        <Redirect to="/SignIn"/>
       }
       <Switch>
         <Route path="/Register" render={(routerProps) => <Register/>}/>
