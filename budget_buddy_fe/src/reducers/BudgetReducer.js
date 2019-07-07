@@ -26,7 +26,7 @@ const budgetReducer = (state = initialState, action) => {
       let dreamItem = action.payload
       return {
         itemList: [
-        ...state,
+        ...state.itemList,
         dreamItem]
       }
 
