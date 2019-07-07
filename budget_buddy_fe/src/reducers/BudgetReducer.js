@@ -1,9 +1,11 @@
 let initialState = {
+  itemList: [],
   budget: {
     item: "",
     amount: 0,
     description: "",
-    catagory:""
+    catagory: "",
+    imgURL: ""
   }
 }
 
@@ -18,7 +20,14 @@ const budgetReducer = (state = initialState, action) => {
         amount: budgetObj.amount,
         description: budgetObj.description,
         catagory: budgetObj.catagory
-
+      }
+      case "ADD_ITEM":
+      // debugger
+      let dreamItem = action.payload
+      return {
+        itemList: [
+        ...state,
+        dreamItem]
       }
 
     default:

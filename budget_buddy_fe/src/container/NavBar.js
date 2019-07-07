@@ -16,8 +16,8 @@ class NavBar extends Component {
       <Link to= "/" className="item">
         <h2>Home</h2>
       </Link>
-      <Link className="item">
-      <h2>Budget</h2>
+      <Link to="/About" className="item">
+      <h2>About</h2>
       </Link>
       <div className="right menu">
       <Link onClick= {this.signOut} to= "/SignIn" className="item">

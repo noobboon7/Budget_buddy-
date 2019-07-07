@@ -5,6 +5,7 @@ import MainContainer from './container/MainContainer';
 import SignIn from './components/SignIn';
 import Profile from './components/ProfilePage';
 import Register from './components/Register';
+import About from './components/About';
 import {  Route, Redirect, Switch } from 'react-router-dom'
 import  'semantic-ui-css/semantic.min.css'
 
@@ -29,6 +30,7 @@ class App extends Component {
         <Route path="/Register" render={(routerProps) => <Register/>}/>
         <Route path="/SignIn" render={(routerProps) => <SignIn/>}/>
         <Route exact path="/Profile" render={(routerProps) => <Profile/>}/>
+        <Route exact path="/About" render={(routerProps) => <About/>}/>
         <Route exact path="/" render={(routerProps) => <MainContainer/>}/>
        </Switch>
        </>

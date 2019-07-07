@@ -1,43 +1,34 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import ItemForm from '../components/ItemForm';
 import Popup from "reactjs-popup";
 
 
 class SideMenu extends Component {
-  state = {
-    itemList: []
-  }
-  handleClick = (e) => {
-    console.log("clicked add button");
-    // this.setState({
-    //
-    //   itemList: [...this.state.itemList, <div>item</div>]
-    // })
-  }
-
   itemButton = (evt) => {
     console.log("item bnt clicked", evt.target.name);
   }
-
-
   render() {
     return(
-
       <div className="ui vertical menu ">
         <div>
-        <Popup trigger={<button onClick={this.handleClick} className=" green circular ui icon button"> <i className="plus icon"></i>
-        Add Item</button>} position="right center">
+        <Popup trigger={
+          <button className="green circular ui icon button">
+          <i className="plus icon"></i>
+        Add Item
+          </button>} position="right top">
           <ItemForm/>
         </Popup>
 
         </div>
         <ul>
-        {this.state.itemList.map(item => {
+        {this.props.items.map(item => {
+          console.log(item);
           return(
             <li>
-              <img src="" alt="img here" />
-              <h4>item name</h4>
-              <h4>target goal</h4>
+              <img src={item.imgURL} alt={item.itemName} />
+              <h4>{item.itemName}</h4>
+              <h4>{item.targetGoal}</h4>
               <button onClick={this.itemButton}
                       name="edit"
                       className="ui blue button">
@@ -58,4 +49,11 @@ class SideMenu extends Component {
   }
 }
 
-export default SideMenu;
+const mapStateToProps = (state) => {
+  // console.log(state);
+  return{
+    items: state.BudgetReducer.itemList
+  }
+}
+
+export default connect(mapStateToProps)(SideMenu);
