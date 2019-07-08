@@ -1,15 +1,20 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import  'semantic-ui-css/semantic.min.css'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Route, Redirect, Switch } from 'react-router-dom'
 import MainContainer from './container/MainContainer';
-// import NavBar from './container/NavBar';
 import SignIn from './components/SignIn';
 import Profile from './components/ProfilePage';
 import Register from './components/Register';
 import About from './components/About';
-import {  Route, Redirect, Switch } from 'react-router-dom'
-import  'semantic-ui-css/semantic.min.css'
+import { getProfileFetch } from './actions/userActions';
+
 
 class App extends Component {
+  componentDidMount() {
+    // debugger
+    this.props.getProfileFetch()
+  }
   render(){
     // console.log(this.props);
     let {loggedIn} = this.props.user
@@ -43,4 +48,9 @@ const mapStateToProps = (state) => {
     user: state.UserReducer
   }
 }
-export default connect(mapStateToProps)(App)
+
+const mapDispatchToProps = (dispatch) => ({
+    getProfileFetch: () => dispatch(getProfileFetch())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
