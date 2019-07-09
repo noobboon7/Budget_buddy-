@@ -12,22 +12,22 @@ class NavBar extends Component {
     return(
       <>
       <div className="ui menu">
-
-      <Link to= "/" className="item">
-        <h2>Home</h2>
-      </Link>
-      <Link to="/About" className="item">
-      <h2>About</h2>
-      </Link>
-      <div className="right menu">
-      <Link onClick= {this.signOut} to= "/SignIn" className="item">
-        <h2>Log Out</h2>
-      </Link>
-      <Link to="/Profile" className="item">
-      <img className="ui avatar image" src={avatar} alt={username}/>
-      <span>{username}</span>
-      </Link>
-      </div>
+      
+        <Link to= "/" className="item">
+          <h2>Home</h2>
+        </Link>
+        <Link to="/About" className="item">
+        <h2>About</h2>
+        </Link>
+        <div className="right menu">
+        <Link onClick= {this.signOut} to= "/SignIn" className="item">
+          <h2>Log Out</h2>
+        </Link>
+        <Link to="/Profile" className="item">
+        <img className="ui avatar image" src={avatar} alt={username}/>
+        <span>{username}</span>
+        </Link>
+        </div>
       </div>
       </>
     )

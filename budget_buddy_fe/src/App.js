@@ -1,4 +1,4 @@
-import  'semantic-ui-css/semantic.min.css'
+// import  'semantic-ui-css/semantic.min.css'
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect, Switch } from 'react-router-dom'

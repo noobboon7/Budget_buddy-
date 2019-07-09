@@ -30,11 +30,6 @@ class SideMenu extends Component {
               <h4>{item.itemName}</h4>
               <h4>{item.targetGoal}</h4>
               <button onClick={this.itemButton}
-                      name="edit"
-                      className="ui blue button">
-                Edit
-              </button>
-              <button onClick={this.itemButton}
                       name="delete"
                       className="ui red button">
                 Delete

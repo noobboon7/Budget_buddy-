@@ -5,7 +5,8 @@ import App from './App';
 import { Provider  } from 'react-redux';
 import  store  from './store';
 import { BrowserRouter as Router } from 'react-router-dom'
-// import 'semantic-ui-css/semantic.min.css'
+import 'semantic-ui-css/semantic.min.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import * as serviceWorker from './serviceWorker';
 
 

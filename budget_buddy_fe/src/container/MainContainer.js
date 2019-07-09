@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import NavBar from './NavBar';
 import SideMenu from './SideMenu';
-import Chart from '../components/Chart';
+import UserChart from '../components/UserChart';
 
 
 class MainContainer extends Component {
   render() {
     return (
       <>
-      <div className="ui fluid container">
+      <div id="main" className="ui fluid container">
         <NavBar/>
         <SideMenu/>
-        <Chart/>
+        <UserChart/>
       </div>
       </>
     )

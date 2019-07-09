@@ -25,38 +25,54 @@ handleSubmit = event => {
   render() {
     console.log(this.props);
     return(
-      <div className="ui form container segment">
-        <form onSubmit={this.handleSubmit}>
-        <h2>Sign In</h2>
-        <div className="field">
-          <label>Username</label>
-          <div className="ui left icon input">
-            <input
-            name='username'
-            placeholder='Username'
-            value={this.state.username}
-            onChange={this.handleChange}
-            /><br/>
-           <i className="user icon"></i>
+      
+      <div className="SignIn">
+        <div  className="ui center container">
+          <div className="ui middle aligned center aligned grid">
+            <div className="column">
+            <div classname="ui mini image">
+            <img src="../icon.png" alt="logo" />
+            </div>
+            <h2 className="ui teal image header">
+            Sign in
+            </h2>
+                <form className="ui large form" onSubmit={this.handleSubmit}>
+                  <div className="ui stacked segment">
+                    <div className="field">
+                    <label>Username</label>
+                    <div className="ui left icon input">
+                      <input
+                      name='username'
+                      placeholder='Username'
+                      value={this.state.username}
+                      onChange={this.handleChange}
+                      /><br/>
+                     <i className="user icon"></i>
+                    </div>
+                    </div>
+                    <div className="field">
+                    <label>Password</label>
+                    <div className="ui left icon input">
+                      <input
+                      type='password'
+                      name='password'
+                      placeholder='Password'
+                      value={this.state.password}
+                      onChange={this.handleChange}
+                      />
+                      <br/>
+                      <i className="lock icon"></i>
+                    </div>
+                    </div>
+                    <input className="ui fluid large teal submit button" type='submit'/>
+                  </div>
+                </form>
+              <div className="ui message">
+                <h5>Not a member yet? <NavLink to="/Register"> Register </NavLink></h5>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="field">
-          <label>Password</label>
-          <div className="ui left icon input">
-            <input
-            type='password'
-            name='password'
-            placeholder='Password'
-            value={this.state.password}
-            onChange={this.handleChange}
-            />
-            <br/>
-            <i className="lock icon"></i>
-          </div>
-          <input className="ui blue submit button" type='submit'/>
-        </div>
-        </form>
-        <h5>Not a member yet? <NavLink to="/Register"> Register </NavLink></h5>
       </div>
     )
   }

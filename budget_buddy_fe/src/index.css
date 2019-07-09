@@ -6,8 +6,43 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+head{
+display: inline-block;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root{
+  height: inherit;
+  display: run-in;
+
+}
+.SignIn {
+  background: rgba(42, 212, 181, 0.66) url("/back.jpg") no-repeat;
+  background-size: cover;
+  height: inherit;
+}
+#pictures{
+  height: inherit;
+  width: 50%;
+  padding: 8px;
+}
+#registerform > *{
+  color: white;
+
+}
+.RegisterPage{
+  background: rgba(42, 212, 181, 0.66) url("/laptop.jpg") no-repeat;
+  background-size: cover;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+#main{
+  background: rgba(29, 255, 214, 0.61) url("/.jpg")no-repeat;
+  background-size: cover;
 }

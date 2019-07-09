@@ -3,12 +3,12 @@ import { Doughnut } from 'react-chartjs-2';
 
 const data = {
 	labels: [
-		'Red',
-		'Green',
-		'Yellow'
+		'DreamItem',
+		'Expenses',
+		'Wallet'
 	],
 	datasets: [{
-		data: [300, 50, 100],
+		data: [50, 50, 1000],
 		backgroundColor: [
 		'#FF6384',
 		'#36A2EB',
