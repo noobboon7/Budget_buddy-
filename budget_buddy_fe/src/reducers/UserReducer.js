@@ -38,14 +38,15 @@ const userReducer = (state = initialState, action) => {
       // debugger
       return{
         ...state,
-        id: currentUser.id,
         firstName: currentUser.first_name,
         lastName: currentUser.last_name,
-        username: currentUser.username,
-        email: currentUser.email,
-        bio: currentUser.bio,
-        amount: currentUser.amount,
-        avatar: currentUser.avatar,
+        ...currentUser,
+        // id: currentUser.id,
+        // username: currentUser.username,
+        // email: currentUser.email,
+        // bio: currentUser.bio,
+        // amount: currentUser.amount,
+        // avatar: currentUser.avatar,
         loggedIn: true
       }
 

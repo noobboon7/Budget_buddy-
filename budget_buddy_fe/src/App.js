@@ -32,7 +32,7 @@ class App extends Component {
         <Redirect to="/SignIn"/>
       }
       <Switch>
-        <Route path="/Register" render={(routerProps) => <Register/>}/>
+        <Route path="/Register" render={(routerProps) => <Register {...routerProps}/>}/>
         <Route path="/SignIn" render={(routerProps) => <SignIn/>}/>
         <Route exact path="/Profile" render={(routerProps) => <Profile/>}/>
         <Route exact path="/About" render={(routerProps) => <About/>}/>

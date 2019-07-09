@@ -72,15 +72,15 @@ export const addUserToBackend = (userObj) => {
     .then((response) => {
       // debugger
       if (!response.error) {
-        dispatch({type: "SAVE_USER_TO_STATE", payload: response})
+        // dispatch({type: "SAVE_USER_TO_STATE", payload: response})
         localStorage.setItem("token", response.jwt)
-        // dispatch(register(response))
+        dispatch(register(response))
         // why doesn't the second dispatch work???
       }
     })
   }
 }
-// const register = userObj => ({
-//     type: 'SET_USER_TO_STATE',
-//     payload: userObj
-// })
+const register = userObj => ({
+    type: 'SAVE_USER_TO_STATE',
+    payload: userObj
+})

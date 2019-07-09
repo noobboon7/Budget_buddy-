@@ -19,10 +19,11 @@ handleSubmit = event => {
   event.preventDefault()
   let user = this.state
   this.props.userLoginFetch(user)
+  this.props.history.push('/')
 }
 
   render() {
-    // console.log(this.props);
+    console.log(this.props);
     return(
       <div className="ui form container segment">
         <form onSubmit={this.handleSubmit}>
@@ -48,8 +49,9 @@ handleSubmit = event => {
             placeholder='Password'
             value={this.state.password}
             onChange={this.handleChange}
-            /><br/>
-           <i className="lock icon"></i>
+            />
+            <br/>
+            <i className="lock icon"></i>
           </div>
           <input className="ui blue submit button" type='submit'/>
         </div>

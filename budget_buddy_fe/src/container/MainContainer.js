@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import NavBar from './NavBar';
 import SideMenu from './SideMenu';
-
+import Chart from '../components/Chart';
 
 
 class MainContainer extends Component {
@@ -12,6 +12,7 @@ class MainContainer extends Component {
       <div className="ui fluid container">
         <NavBar/>
         <SideMenu/>
+        <Chart/>
       </div>
       </>
     )

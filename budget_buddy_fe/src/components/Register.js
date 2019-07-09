@@ -11,7 +11,7 @@ class Register extends Component {
     password: "",
     email: "",
     bio: "",
-    amount: 5, 
+    amount: 5,
     avatar:"../avatar.png"
   };
 
@@ -25,6 +25,7 @@ class Register extends Component {
     e.preventDefault()
     const newUser = this.state
     this.props.addUserToBackend(newUser)
+    this.props.history.push("/")
     // dispatch({type: "SAVE_USER_TO_STATE", payload:newUser})
   }
 

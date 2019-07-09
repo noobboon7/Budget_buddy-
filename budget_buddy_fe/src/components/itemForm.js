@@ -48,7 +48,7 @@ class ItemForm extends React.Component {
         </div>
         <div className="field">
         <label>Image URL</label>
-        <input onChange={this.handleChange} name="imgURL"  value={imgURL} type="url" placeholder="https://www.wikihow.com/aid-900px.jpg"/>
+        <input onChange={this.handleChange} name="imgURL" value={imgURL} type="url" placeholder="https://www.wikihow.com/aid-900px.jpg"/>
         </div>
           <input className="ui button" type="submit"/>
       </form>
