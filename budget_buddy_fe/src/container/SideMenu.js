@@ -3,15 +3,15 @@ import {connect} from 'react-redux';
 import ItemForm from '../components/ItemForm';
 import DreamItemCard from '../components/DreamItemCard';
 import Popup from "reactjs-popup";
-import { deleteItem } from '../actions/ItemAction';
+import { deleteItemFetch } from '../actions/ItemAction';
 
 
 
 class SideMenu extends Component {
-  itemButton = (id, dispatch) => {
+  itemButton = (id) => {
     // debugger
     console.log("item bnt clicked", id);
-    dispatch(deleteItem())
+    this.props.deleteItemFetch(id)
   }
   render() {
     return(
@@ -31,7 +31,6 @@ class SideMenu extends Component {
           // console.log(item)
           return(
             <li key={item.id}>
-
             <DreamItemCard key={item.id} itemButton={this.itemButton} item={item}/>
             </li>
           )
@@ -49,4 +48,9 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(SideMenu);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deleteItemFetch: (id) => {dispatch(deleteItemFetch(id))}
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SideMenu);

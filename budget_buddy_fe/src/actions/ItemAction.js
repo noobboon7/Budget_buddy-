@@ -29,9 +29,9 @@ const addItem = (dreamItem) => ({
   payload: dreamItem
 });
 
-export const deleteItem = (dreamItem) => ({
+ const deleteItem = (id) => ({
   type: 'DELETE_ITEM',
-  payload: dreamItem
+  payload: id
 });
 
 export const getItemFetch = () => {
@@ -58,6 +58,24 @@ export const getItemFetch = () => {
             dispatch(addItem(data))
           }
         })
+    }
+  }
+}
+export const deleteItemFetch = (id) => {
+  return dispatch => {
+    // debugger
+    const token = localStorage.token;
+    if (token) {
+      // debugger
+      return fetch(`http://localhost:3000/budgets/${id}`, {
+        method: "DELETE",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': localStorage.token
+        }
+      })
+        .then(dispatch(deleteItem(id)))
     }
   }
 }

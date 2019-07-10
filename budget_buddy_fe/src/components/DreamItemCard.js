@@ -5,7 +5,7 @@ import { Progress, Segment } from 'semantic-ui-react';
 const DreamItemCard = (props) => {
   const {id, item, img_url, targetgoal } = props.item
   const {itemButton} = props
-  console.log(props);
+  // console.log(props);
   return (
 
 
@@ -22,7 +22,7 @@ const DreamItemCard = (props) => {
           className="ui red button">
           Delete
           </button>
-          <hr/>)
+          <hr/>
       </div>
     )
   }

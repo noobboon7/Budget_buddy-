@@ -34,10 +34,10 @@ const budgetReducer = (state = initialState, action) => {
 
       case "DELETE_ITEM":
       let id = action.payload
-
+      let deletedItemArray = state.itemList.filter(item => item.id !== id)
       return{
-        ...state.itemList.filter(id !== id )
-
+        ...state,
+        itemList: deletedItemArray
       }
 
 
