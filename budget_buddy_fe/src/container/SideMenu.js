@@ -31,7 +31,7 @@ class SideMenu extends Component {
           // console.log(item)
           return(
             <li key={item.id}>
-            <DreamItemCard key={item.id} itemButton={this.itemButton} item={item}/>
+            <DreamItemCard wallet={this.props.wallet} key={item.id} itemButton={this.itemButton} items={item}/>
             </li>
           )
         })}
@@ -44,7 +44,8 @@ class SideMenu extends Component {
 const mapStateToProps = (state) => {
   // console.log(state);
   return{
-    items: state.BudgetReducer.itemList
+    items: state.BudgetReducer.itemList,
+    wallet: state.UserReducer.amount
   }
 }
 

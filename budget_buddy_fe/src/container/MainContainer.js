@@ -12,7 +12,9 @@ class MainContainer extends Component {
       <div id="main" className="ui fluid container">
         <NavBar/>
         <SideMenu/>
+        <div className="ui container">
         <UserChart/>
+        </div>
       </div>
       </>
     )
