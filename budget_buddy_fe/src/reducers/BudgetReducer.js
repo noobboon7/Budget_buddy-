@@ -1,13 +1,13 @@
 let initialState = {
   itemList: [],
-  expense: {
-    id:"",
-    item: "",
-    amount: 0,
-    description: "",
-    catagory: "",
-    imgURL: ""
-  }
+  // expense: {
+  //   id:"",
+  //   item: "",
+  //   amount: 0,
+  //   description: "",
+  //   catagory: "",
+  //   imgURL: ""
+  // }
 }
 
 const budgetReducer = (state = initialState, action) => {
@@ -29,6 +29,15 @@ const budgetReducer = (state = initialState, action) => {
         itemList: [
           ...state.itemList,
           ...dreamItem
+        ]
+      }
+      case "ADD_ITEM":
+      let newItem = action.payload
+      // debugger
+      return {
+        itemList: [
+          ...state.itemList,
+          newItem
         ]
       }
 

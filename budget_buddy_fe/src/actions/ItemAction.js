@@ -1,5 +1,5 @@
 export const addItemToBackend = budget => {
-  debugger
+  // debugger
   return dispatch => {
     return fetch("http://localhost:3000/budgets", {
       method: "POST",
@@ -24,9 +24,9 @@ export const addItemToBackend = budget => {
 }
 
 
-const addItem = (dreamItem) => ({
-  type: 'ADD_ITEMS',
-  payload: dreamItem
+const addItem = (newItem) => ({
+  type: 'ADD_ITEM',
+  payload: newItem
 });
 
  const deleteItem = (id) => ({
@@ -55,12 +55,17 @@ export const getItemFetch = () => {
             alert(data.error)
           } else {
             // debugger
-            dispatch(addItem(data))
+            dispatch(addItems(data))
           }
         })
     }
   }
 }
+const addItems = (dreamItem) => ({
+  type: 'ADD_ITEMS',
+  payload: dreamItem
+});
+
 export const deleteItemFetch = (id) => {
   return dispatch => {
     // debugger
