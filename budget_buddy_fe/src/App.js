@@ -8,12 +8,14 @@ import Profile from './components/ProfilePage';
 import Register from './components/Register';
 import About from './components/About';
 import { getProfileFetch } from './actions/userActions';
+import { getItemFetch } from './actions/ItemAction';
 
 
 class App extends Component {
   componentDidMount() {
     // debugger
     this.props.getProfileFetch()
+    this.props.getItemFetch()
   }
   render(){
     // console.log(this.props);
@@ -50,7 +52,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    getProfileFetch: () => dispatch(getProfileFetch())
+    getProfileFetch: () => dispatch(getProfileFetch()),
+    getItemFetch: () => dispatch(getItemFetch())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

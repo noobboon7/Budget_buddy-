@@ -8,7 +8,7 @@ const data = {
 		'Wallet'
 	],
 	datasets: [{
-		data: [50, 50, 1000],
+		data: [50, 50, 100],
 		backgroundColor: [
 		'#FF6384',
 		'#36A2EB',
@@ -24,14 +24,10 @@ const data = {
 
 
 class UserChart extends Component {
-  // state={
-  //   chartData: {}
-  // }
-
   render() {
     return(
       <div className="chart">
-        <h2>Doughnut Example</h2>
+        <h2>Home Chart</h2>
       <Doughnut data={data}/>
       </div>
     )

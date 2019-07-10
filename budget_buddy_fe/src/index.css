@@ -46,3 +46,10 @@ code {
   background: rgba(29, 255, 214, 0.61) url("/.jpg")no-repeat;
   background-size: cover;
 }
+.profile{
+  background: rgba(29, 255, 214, 0.61) url("/coin.jpg")no-repeat;
+  background-size: cover;
+  height: inherit;
+  color: rgb(236, 228, 37);
+
+}

@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addItem } from '../actions/ItemAction';
+import { addItemToBackend } from '../actions/ItemAction';
 
 
 class ItemForm extends React.Component {
   state={
-    itemName: "",
-    targetGoal: 0,
+    item: "",
+    targetgoal: 0,
     category: "",
-    imgURL: ""
+    img_url: ""
   }
 
   handleChange = (evt) => {
@@ -19,20 +19,21 @@ class ItemForm extends React.Component {
   handleSubmit = (evt) => {
     evt.preventDefault()
     // console.log(addItem);
-    this.props.addItem(this.state)
+    this.props.addItemToBackend(this.state)
+
   }
   render() {
     // console.log(this.props);
-    const {imgURL, itemName, targetGoal,category} = this.state
+    const {img_url, item, targetgoal,category} = this.state
     return(
       <form onSubmit={this.handleSubmit} className="ui form">
         <div className="field">
           <label>Item Name</label>
-          <input onChange={this.handleChange} name="itemName" value={itemName} type="text" placeholder="Boosted Board"/>
+          <input onChange={this.handleChange} name="item" value={item} type="text" placeholder="Boosted Board"/>
         </div>
         <div className="field">
           <label>Price</label>
-          <input onChange={this.handleChange} name="targetGoal" value={targetGoal} type="number" placeholder="$$$"/>
+          <input onChange={this.handleChange} name="targetgoal" value={targetgoal} type="number" placeholder="$$$"/>
         </div>
         <div className="field">
           <label>Category</label>
@@ -48,7 +49,7 @@ class ItemForm extends React.Component {
         </div>
         <div className="field">
         <label>Image URL</label>
-        <input onChange={this.handleChange} name="imgURL" value={imgURL} type="url" placeholder="https://www.wikihow.com/aid-900px.jpg"/>
+        <input onChange={this.handleChange} name="img_url" value={img_url} type="url" placeholder="https://www.wikihow.com/aid-900px.jpg"/>
         </div>
           <input className="ui button" type="submit"/>
       </form>
@@ -59,7 +60,7 @@ class ItemForm extends React.Component {
 const mapDispatchToProps = (dispatch) => {
   // console.log(dispatch);
   return{
-    addItem: (dreamItem) => dispatch(addItem(dreamItem))
+    addItemToBackend: (item) => dispatch(addItemToBackend(item))
   }
 }
 

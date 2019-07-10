@@ -2,11 +2,13 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import ItemForm from '../components/ItemForm';
 import Popup from "reactjs-popup";
+import { Progress, Segment } from 'semantic-ui-react';
 
 
 class SideMenu extends Component {
   itemButton = (evt) => {
     console.log("item bnt clicked", evt.target.name);
+
   }
   render() {
     return(
@@ -25,10 +27,14 @@ class SideMenu extends Component {
         {this.props.items.map(item => {
           // console.log(item);
           return(
-            <li>
-              <img src={item.imgURL} alt={item.itemName} />
-              <h4>{item.itemName}</h4>
-              <h4>{item.targetGoal}</h4>
+            <li key={item.id}>
+              <img className="ui small circular image" src={item.img_url} alt={item.item} />
+              <h4>{item.item}</h4>
+              <Segment inverted>
+                <Progress percent={32} inverted color='green' size="small">
+                <h4>{item.targetgoal}</h4>
+                </Progress>
+              </Segment>
               <button onClick={this.itemButton}
                       name="delete"
                       className="ui red button">

@@ -1,6 +1,7 @@
 let initialState = {
   itemList: [],
-  budget: {
+  expense: {
+    id:"",
     item: "",
     amount: 0,
     description: "",
@@ -22,13 +23,21 @@ const budgetReducer = (state = initialState, action) => {
         catagory: budgetObj.catagory
       }
       case "ADD_ITEM":
-      // debugger
       let dreamItem = action.payload
+      // debugger
       return {
         itemList: [
-        ...state.itemList,
-        dreamItem]
+          ...state.itemList,
+          {imgURL: dreamItem.img_url},
+          ...dreamItem
+        ]
       }
+
+      case "DELETE_ITEM":
+      return{
+        ...state,
+      }
+
 
     default:
       return state;
