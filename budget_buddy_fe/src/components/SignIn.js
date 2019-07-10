@@ -25,12 +25,12 @@ handleSubmit = event => {
   render() {
     console.log(this.props);
     return(
-      
+
       <div className="SignIn">
         <div  className="ui center container">
           <div className="ui middle aligned center aligned grid">
             <div className="column">
-            <div classname="ui mini image">
+            <div className="ui mini image">
             <img src="../icon.png" alt="logo" />
             </div>
             <h2 className="ui teal image header">

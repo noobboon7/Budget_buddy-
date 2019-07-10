@@ -12,7 +12,7 @@ class Profile extends Component {
       <>
       <div className="profile">
       <Link to="/">
-      <button class="ui right floated button"><h3>Back to Home</h3></button>
+      <button className="ui right floated button"><h3>Back to Home</h3></button>
       </Link>
       <div >
         <img className="ui small circular image" src={avatar} alt={username} />

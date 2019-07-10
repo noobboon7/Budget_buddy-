@@ -25,7 +25,12 @@ export const addItemToBackend = budget => {
 
 
 const addItem = (dreamItem) => ({
-  type: 'ADD_ITEM',
+  type: 'ADD_ITEMS',
+  payload: dreamItem
+});
+
+export const deleteItem = (dreamItem) => ({
+  type: 'DELETE_ITEM',
   payload: dreamItem
 });
 

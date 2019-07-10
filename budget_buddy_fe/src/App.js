@@ -21,7 +21,7 @@ class App extends Component {
     // console.log(this.props);
     let {loggedIn} = this.props.user
     // if (this.state.loading) {
-    //   return <div class="ui active centered inline loader">
+    //   return <div className="ui active centered inline loader">
     //   <h1>LOADING</h1>
     //   </div>
     // }

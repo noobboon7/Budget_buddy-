@@ -22,20 +22,22 @@ const budgetReducer = (state = initialState, action) => {
         description: budgetObj.description,
         catagory: budgetObj.catagory
       }
-      case "ADD_ITEM":
+      case "ADD_ITEMS":
       let dreamItem = action.payload
       // debugger
       return {
         itemList: [
           ...state.itemList,
-          {imgURL: dreamItem.img_url},
           ...dreamItem
         ]
       }
 
       case "DELETE_ITEM":
+      let id = action.payload
+
       return{
-        ...state,
+        ...state.itemList.filter(id !== id )
+
       }
 
 
