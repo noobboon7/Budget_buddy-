@@ -5,8 +5,9 @@ import NavBar from '../container/NavBar';
 export default class About extends React.Component {
   render() {
     return(
-      <div>
+      <>
       <NavBar/>
+      <div className="AboutPage">
         <p>
           Creating a budget might not exactly sound like the most enjoyable task in the world, but it's a necessary part of keeping your finances in order, and keeping you out of mounting debt.
         </p>
@@ -56,6 +57,7 @@ export default class About extends React.Component {
           There are a variety of free budget templates available to suit your needs, whether it's for college students, parents with children in daycare, single-income households, and so forth. Choosing the one that fits your lifestyle is crucial to help you develop a clear understanding of how your take-home pay covers all your expenses.
         </p>
       </div>
+      </>
     )
   }
 };
