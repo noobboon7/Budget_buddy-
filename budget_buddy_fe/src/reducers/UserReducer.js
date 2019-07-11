@@ -41,12 +41,6 @@ const userReducer = (state = initialState, action) => {
         firstName: currentUser.first_name,
         lastName: currentUser.last_name,
         ...currentUser,
-        // id: currentUser.id,
-        // username: currentUser.username,
-        // email: currentUser.email,
-        // bio: currentUser.bio,
-        // amount: currentUser.amount,
-        // avatar: currentUser.avatar,
         loggedIn: true
       }
 

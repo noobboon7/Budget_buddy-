@@ -101,7 +101,7 @@ export const addToUserWallet = (amount) => {
     })
     .then(res => res.json())
     .then((response) => {
-      if (!response.error) {debugger
+      if (!response.error) {
         dispatch(addToWallet(response.user.amount))
       }
     })

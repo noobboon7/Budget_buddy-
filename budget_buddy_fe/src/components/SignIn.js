@@ -20,8 +20,10 @@ handleSubmit = event => {
   event.preventDefault()
   let user = this.state
   this.props.userLoginFetch(user)
-  this.props.loggedIn? this.props.history.push('/') : this.props.history.push("/SignIn")
-  this.props.getItemFetch()
+  this.props.loggedIn?
+   this.props.getItemFetch() && this.props.history.push('/')
+   :
+   this.props.history.push("/SignIn")
 }
 
   render() {
@@ -35,9 +37,7 @@ handleSubmit = event => {
             <div className="ui mini image">
             <img src="../icon.png" alt="logo" />
             </div>
-            <h2 className="ui teal image header">
-            Sign in
-            </h2>
+            <h1 style={{marginLeft: "10px"}} className="ui teal image header"> Budget Buddy </h1>
                 <form className="ui large form" onSubmit={this.handleSubmit}>
                   <div className="ui stacked segment">
                     <div className="field">
