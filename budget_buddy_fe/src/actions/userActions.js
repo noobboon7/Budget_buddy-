@@ -83,6 +83,33 @@ export const addUserToBackend = (userObj) => {
   }
 }
 const register = userObj => ({
-    type: 'SAVE_USER_TO_STATE',
-    payload: userObj
+  type: 'SAVE_USER_TO_STATE',
+  payload: userObj
+})
+
+export const addToUserWallet = (amount) => {
+  // debugger
+  return (dispatch) => {
+    fetch("http://localhost:3000/add_to_wallet",{
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accepts": "application/json",
+        'Authorization': localStorage.token
+      },
+      body: JSON.stringify(amount)
+    })
+    .then(res => res.json())
+    .then((response) => {
+      if (!response.error) {debugger
+        dispatch(addToWallet(response.user.amount))
+      }
+    })
+  }
+}
+
+
+const addToWallet = (amount) => ({
+  type: 'ADD_BALANCE',
+  payload: amount
 })

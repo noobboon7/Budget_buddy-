@@ -50,6 +50,14 @@ const userReducer = (state = initialState, action) => {
         loggedIn: true
       }
 
+      case 'ADD_BALANCE':
+      let balance = action.payload
+      return{
+        ...state,
+        amount: balance
+      }
+
+
     default:
       return state;
   }
