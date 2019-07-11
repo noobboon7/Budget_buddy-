@@ -11,8 +11,8 @@ class NavBar extends Component {
     const {username, avatar} = this.props.user
     return(
       <>
-      <div className="ui menu">
-      
+      <div id="nav" className="ui menu">
+
         <Link to= "/" className="item">
           <h2>Home</h2>
         </Link>

@@ -15,7 +15,7 @@ class SideMenu extends Component {
   }
   render() {
     return(
-      <div className="ui vertical menu ">
+      <div id="SideMenu" className="ui vertical menu ">
         <div className="PopupMenu">
         <Popup trigger={
           <button className="green circular ui icon button">

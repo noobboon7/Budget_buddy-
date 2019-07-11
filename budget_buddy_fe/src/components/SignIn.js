@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {NavLink, withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userLoginFetch } from '../actions/userActions';
+import { getItemFetch } from '../actions/ItemAction';
 
 class SignIn extends Component {
   state={
@@ -19,11 +20,12 @@ handleSubmit = event => {
   event.preventDefault()
   let user = this.state
   this.props.userLoginFetch(user)
-  this.props.history.push('/')
+  this.props.loggedIn? this.props.history.push('/') : this.props.history.push("/SignIn")
+  this.props.getItemFetch()
 }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return(
 
       <div className="SignIn">
@@ -81,8 +83,14 @@ handleSubmit = event => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    userLoginFetch: (user) => dispatch(userLoginFetch(user))
+    userLoginFetch: (user) => dispatch(userLoginFetch(user)),
+    getItemFetch: () => dispatch(getItemFetch())
+  }
+}
+const mapStateToProps = ({UserReducer}) => {
+  return{
+    loggedIn: UserReducer.loggedIn
   }
 }
 
-export default withRouter(connect(null,mapDispatchToProps)(SignIn))
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(SignIn))

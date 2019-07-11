@@ -1,3 +1,4 @@
+import { getItemFetch } from './ItemAction';
 export const userLoginFetch = user => {
   // debugger
   return dispatch => {
@@ -18,6 +19,7 @@ export const userLoginFetch = user => {
           // debugger
           localStorage.setItem("token", data.jwt)
           dispatch(loginUser(data.user))
+          dispatch(getItemFetch())
         }
       })
   }
@@ -75,7 +77,7 @@ export const addUserToBackend = (userObj) => {
         // dispatch({type: "SAVE_USER_TO_STATE", payload: response})
         localStorage.setItem("token", response.jwt)
         dispatch(register(response))
-        // why doesn't the second dispatch work???
+
       }
     })
   }

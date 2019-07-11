@@ -9,10 +9,10 @@ class MainContainer extends Component {
   render() {
     return (
       <>
-      <div id="main" className="ui fluid container">
-        <NavBar/>
+      <NavBar/>
+      <div id="main" className="ui fluid container" >
         <SideMenu/>
-        <div className="ui container">
+        <div id="chart" className="ui container" >
         <UserChart/>
         </div>
       </div>
