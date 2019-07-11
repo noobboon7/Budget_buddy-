@@ -29,7 +29,7 @@ code {
   width: 50%;
   padding: 8px;
 }
-#registerform > *{
+#registerform {
   color: white;
 
 }
