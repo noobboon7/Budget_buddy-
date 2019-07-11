@@ -3,6 +3,11 @@ import { Doughnut } from 'react-chartjs-2';
 import { connect } from 'react-redux';
 
 
+class UserChart extends Component {
+	render() {
+		const {wallet, dreamItems} = this.props
+		const budgetItems = dreamItems.map((item) => item.targetgoal)
+		const budgetTotal = budgetItems.reduce((a,b) => a + b, 0)
 
 const data = {
 	labels: [
@@ -11,7 +16,7 @@ const data = {
 		'Wallet'
 	],
 	datasets: [{
-		data: [50, 80, 100],
+		data: [budgetTotal, 80, wallet],
 		backgroundColor: [
 			'#FF6384',
 			'#36A2EB',
@@ -24,13 +29,8 @@ const data = {
 		]
 	}]
 };
-class UserChart extends Component {
-  render() {
-		const {wallet, dreamItems} = this.props
-		const budgetItems = dreamItems.map((item) => item.targetgoal)
-		const budgetTotal = budgetItems.reduce((a,b) => a + b, 0)
 		console.log(wallet, dreamItems);
-		console.log(budgetItems, budgetTotal);
+		// console.log(budgetItems, budgetTotal);
     return(
       <Doughnut data={data}/>
     )
