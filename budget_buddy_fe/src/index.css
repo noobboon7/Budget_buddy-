@@ -59,7 +59,7 @@ code {
   background: rgba(29, 255, 214, 0.61) url("/coin.jpg")no-repeat;
   background-size: cover;
   height: inherit;
-  
+
 }
 .AboutPage p, h4{
   font-size: 1.25em;
@@ -90,4 +90,8 @@ code {
 #nav{
   margin-bottom: 0px;
   padding: 15px;
+}
+.ExepenseContainer{
+  display: flex;
+
 }
