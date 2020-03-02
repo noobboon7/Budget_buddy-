@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import ItemForm from '../components/ItemForm';
+import ItemForm from '../components/itemForm';
 import DreamItemCard from '../components/DreamItemCard';
 import Popup from "reactjs-popup";
 import { deleteItemFetch } from '../actions/ItemAction';
